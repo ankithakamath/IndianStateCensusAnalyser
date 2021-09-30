@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import indianstatecensusAnalyser.CsvException;
 import indianstatecensusAnalyser.StateCensusAnalyser;
+import indianstatecensusAnalyser.StateCode;
 
 public class StateCensusAnalyserTest {
 
@@ -18,7 +19,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/ankithakamath/Desktop/assignments/indianstatecensusAnalyser/data/Data3.csv");
-			Assert.assertEquals(4, analyser.readStateRecord());
+			Assert.assertEquals(4, analyser.readStateRecord(StateCode.class));
 		} catch (CsvException e) {
 			System.out.println(e);
 		}
@@ -32,7 +33,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/ankithakamath/Desktop/assignments/indianstatecensusAnalyser/data/Data4.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 			Assert.assertEquals("File not found", e.getMessage());
 			System.out.println(e);
@@ -48,7 +49,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/ankithakamath/Desktop/assignments/indianstatecensusAnalyser/data/Data1.txt");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 			Assert.assertEquals("Wrong Type", e.getMessage());
 			System.out.println(e);
@@ -63,7 +64,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/ankithakamath/Desktop/assignments/indianstatecensusAnalyser/data/Data2.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 
 			System.out.println(e);
@@ -79,7 +80,7 @@ public class StateCensusAnalyserTest {
 		try {
 			StateCensusAnalyser analyser = new StateCensusAnalyser(
 					"/Users/ankithakamath/Desktop/assignments/indianstatecensusAnalyser/data/Data1.csv");
-			analyser.readStateRecord();
+			analyser.readStateRecord(StateCode.class);
 		} catch (CsvException e) {
 
 			System.out.println(e);
